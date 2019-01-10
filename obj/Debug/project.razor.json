@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\Makuwo\\Documents\\Visual Studio 2015\\Projects\\WindowsFormsApplication1\\WindowsFormsApplication1\\WindowsFormsApplication1.csproj",
+  "TargetFramework": "v4.5.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
