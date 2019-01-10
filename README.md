@@ -15,7 +15,7 @@ MegaPadは、トゥートだけを極限までにシンプルに、コンパク�
 
 ベースは、前回作のTodoListDonです。
 
-#ライセンスについて
+# ライセンスについて
 このソフト自体はMITライセンスです。 また、APIは、yamachuさんのMastodotを使用しました。ありがとうございます。
 
 Copyright (c) 2019 Ichiya Takashiro Released under the MIT license
