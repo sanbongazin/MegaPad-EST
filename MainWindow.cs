@@ -18,18 +18,17 @@ namespace WindowsFormsApplication1
         private static string host;
         private static string AccessToken;
         public static  string [] TodoList;
-        public static MainWindow main = new MainWindow();
-        private string UserName;
+        //public static MainWindow main = new MainWindow();
+        
 
         public MainWindow()
         {
-
-            //var p = new Form1();
             InitializeComponent();
             this.TopMost = true;
+            
 
 
-        }
+    }
 
 
         public void OAuth(string a)
@@ -70,24 +69,34 @@ namespace WindowsFormsApplication1
         }
 
         public void Toot(string mode) {
-            registeredApp = ApplicaionManager.RegistApp(host, "ExtremeSimpleTooter", Scope.Read | Scope.Write | Scope.Follow).Result;
+            registeredApp = ApplicaionManager.RegistApp(host, "MegaPad", Scope.Read | Scope.Write | Scope.Follow).Result;
             var client = new MastodonClient(host, AccessToken);
 
             
             string TootMessage = Toot_Input.Text+ Environment.NewLine;
+
+            if (TootMessage.Length > 500) {
+                MessageBox.Show("文字数超過です。減らしてください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+
+
             if (TootMessage == "") {
                 return;
             }
             if (mode == "公開")
             {
-                client.PostNewStatus(status: TootMessage +"#On_MegaPad_EST", visibility: Mastodot.Enums.Visibility.Public);
+                client.PostNewStatus(status: TootMessage , visibility: Mastodot.Enums.Visibility.Public);
             }
             else if (mode == "非公開")
             {
-                client.PostNewStatus(status: TootMessage + "#On_MegaPad_EST", visibility: Mastodot.Enums.Visibility.Unlisted);
+                client.PostNewStatus(status: TootMessage , visibility: Mastodot.Enums.Visibility.Unlisted);
             }
             else {
-                client.PostNewStatus(status: TootMessage  + "#On_MegaPad_EST", visibility: Mastodot.Enums.Visibility.Private);
+                client.PostNewStatus(status: TootMessage  , visibility: Mastodot.Enums.Visibility.Private);
             }
 
             Toot_Input.Clear();
@@ -106,16 +115,17 @@ namespace WindowsFormsApplication1
 
         private void Toot_Input_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter && e.Control == true)
+            if (e.KeyCode == Keys.Enter && e.Shift == true && e.Control == true)
+            {
+                OAuth("フォローのみ");
+            }
+            else if (e.KeyCode == Keys.Enter && e.Control == true)
             {
                 OAuth("公開");
             }
             else if (e.KeyCode == Keys.Enter && e.Shift == true)
             {
                 OAuth("非公開");
-            }
-            else if (e.KeyCode == Keys.Enter && e.Alt == true && e.Control == true) {
-                OAuth("フォローのみ");
             }
         }
 
@@ -168,6 +178,126 @@ namespace WindowsFormsApplication1
                 this.TopMost = true;
             }
 
+        }
+
+
+        private void ライトToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+            Toot_Input.BackColor = Color.White;
+            Toot_Input.ForeColor = Color.Black;
+            MainMenuStrip.BackColor = Color.White;
+            MainMenuStrip.ForeColor = Color.Black;
+            LastTextNumber.ForeColor = Color.Black;
+
+            ToolStripMenuItem[] groupMenuItems = new ToolStripMenuItem[]
+                {
+                this.ライトToolStripMenuItem,
+                this.ダークToolStripMenuItem,
+                this.brewToolStripMenuItem,
+                //this.オリジナルToolStripMenuItem
+                };
+
+            foreach (ToolStripMenuItem item in groupMenuItems)
+            {
+                if (object.ReferenceEquals(item, sender))
+                {
+                    //ClickされたToolStripMenuItemならば、Indeterminateにする
+                    item.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    //ClickされたToolStripMenuItemでなければ、Uncheckedにする
+                    item.CheckState = CheckState.Unchecked;
+                }
+
+            }
+        }
+
+        private void ダークToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+            Toot_Input.BackColor = Color.Black;
+            Toot_Input.ForeColor = Color.White;
+            MainMenuStrip.BackColor = Color.Black;
+            MainMenuStrip.ForeColor = Color.White;
+            LastTextNumber.ForeColor = Color.White;
+            LastTextNumber.BackColor = Color.Black;
+
+
+            ToolStripMenuItem[] groupMenuItems = new ToolStripMenuItem[]
+                {
+                this.ライトToolStripMenuItem,
+                this.ダークToolStripMenuItem,
+                this.brewToolStripMenuItem,
+                //this.オリジナルToolStripMenuItem
+                };
+
+            foreach (ToolStripMenuItem item in groupMenuItems)
+            {
+                if (object.ReferenceEquals(item, sender))
+                {
+                    //ClickされたToolStripMenuItemならば、Indeterminateにする
+                    item.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    //ClickされたToolStripMenuItemでなければ、Uncheckedにする
+                    item.CheckState = CheckState.Unchecked;
+                }
+
+            }
+        }
+
+        private void brewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+            Toot_Input.BackColor = Color.Black;
+            Toot_Input.ForeColor = Color.GreenYellow;
+            MainMenuStrip.BackColor = Color.Black;
+            MainMenuStrip.ForeColor = Color.GreenYellow;
+            LastTextNumber.ForeColor = Color.GreenYellow;
+            LastTextNumber.BackColor = Color.Black;
+
+
+            ToolStripMenuItem[] groupMenuItems = new ToolStripMenuItem[]
+                {
+                this.ライトToolStripMenuItem,
+                this.ダークToolStripMenuItem,
+                this.brewToolStripMenuItem,
+                //this.オリジナルToolStripMenuItem
+                };
+
+            foreach (ToolStripMenuItem item in groupMenuItems)
+            {
+                if (object.ReferenceEquals(item, sender))
+                {
+                    //ClickされたToolStripMenuItemならば、Indeterminateにする
+                    item.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    //ClickされたToolStripMenuItemでなければ、Uncheckedにする
+                    item.CheckState = CheckState.Unchecked;
+                }
+
+            }
+        }
+
+        private void ハッシュタグオプションToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HashTagSelecter tagselector = new HashTagSelecter();
+            this.TopMost = false;
+            tagselector.ShowDialog();
+            this.TopMost = true;
+
+            if (tagselector.SelectedTag == null)
+            {
+                Toot_Input.Text = Toot_Input.Text;
+            }
+            else {
+                Toot_Input.Text = Toot_Input.Text + Environment.NewLine + "#" + tagselector.SelectedTag;
+            }
         }
     }
 }

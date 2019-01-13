@@ -34,10 +34,10 @@ namespace WindowsFormsApplication1
             host = InstanceInput.Text;
             try
             {
-                registeredApp = ApplicaionManager.RegistApp(host, "ExtremeSimpleTooter", Scope.Read | Scope.Write | Scope.Follow).Result;
+                registeredApp = ApplicaionManager.RegistApp(host, "MegaPad", Scope.Read | Scope.Write | Scope.Follow).Result;
             }
            catch (AggregateException) {
-                MessageBox.Show("正しい値を入力してください。",
+                MessageBox.Show("インスタンスを取得できませんでした。正しいインスタンスの名前か確認してください。",
                 "エラー",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
