@@ -21,7 +21,7 @@ MegaPadは、トゥートだけを極限までにシンプルに、コンパク�
 
 # ハッシュタグオプションの選択機能
 ハッシュタグオプションをツールメニューから、選択し、貼り付けることが可能です。
-[Imgur](https://i.imgur.com/4r6p0ho.png)
+
 
 ![Imgur](https://i.imgur.com/4r6p0ho.png)
 
