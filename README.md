@@ -15,8 +15,19 @@ MegaPadは、トゥートだけを極限までにシンプルに、コンパク�
 
 ベースは、前回作のTodoListDonです。
 
+# カラープロファイル変更
+ツールメニューから、カラープロファイルをマウスで選び、ライト、ダーク、brewモードの3モードを変更可能になりました。
+![Imgur](https://i.imgur.com/158Gj3y.png)
+
+# ハッシュタグオプションの選択機能
+ハッシュタグオプションをツールメニューから、選択し、貼り付けることが可能です。
+
+
+![Imgur](https://i.imgur.com/4r6p0ho.png)
+
+
 # ライセンスについて
-このソフト自体はMITライセンスです。 また、APIは、yamachuさんのMastodotを使用しました。ありがとうございます。
+このソフト自体はMITライセンスです。 また、APIは、yamachuさんのMastodot、syuiloさんのmisqを使用しました。ありがとうございます。
 
 Copyright (c) 2019 Ichiya Takashiro Released under the MIT license
 
