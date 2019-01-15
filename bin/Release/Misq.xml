@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Misq</name>
+    </assembly>
+    <members>
+        <member name="T:Misq.App">
+            <summary>
+            Misskeyアプリクラス
+            </summary>
+        </member>
+        <member name="P:Misq.App.Host">
+            <summary>
+            アプリケーションの属するインスタンスURLを取得または設定します。
+            </summary>
+        </member>
+        <member name="P:Misq.App.Secret">
+            <summary>
+            アプリケーションのシークレット・キーを取得または設定します。
+            </summary>
+        </member>
+        <member name="M:Misq.App.#ctor(System.String,System.String)">
+            <summary>
+            Appインスタンスを初期化します。
+            </summary>
+            <param name="host">アプリケーションの属するインスタンスURL</param>
+            <param name="secret">アプリケーションのシークレットキー</param>
+        </member>
+        <member name="M:Misq.App.Authorize">
+            <summary>
+            認証セッションを開始し、フォームを既定のブラウザーで表示します。
+            </summary>
+            <returns>ユーザー</returns>
+        </member>
+        <member name="M:Misq.App.Request(System.String)">
+            <summary>
+            このアプリからAPIにリクエストします。
+            </summary>
+            <param name="endpoint">エンドポイント名</param>
+            <returns>レスポンス</returns>
+        </member>
+        <member name="M:Misq.App.Request(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            このアプリからAPIにリクエストします。
+            </summary>
+            <param name="endpoint">エンドポイント名</param>
+            <param name="ps">パラメーター</param>
+            <returns>レスポンス</returns>
+        </member>
+        <member name="M:Misq.Core.Request(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            APIにリクエストします。
+            </summary>
+            <param name="host">MisskeyインスタンスのURL</param>
+            <param name="endpoint">エンドポイント名</param>
+            <param name="ps">パラメーター</param>
+            <returns>レスポンス</returns>
+        </member>
+        <member name="M:Misq.Core.RequestWithBinary(System.String,System.String,System.Net.Http.MultipartFormDataContent)">
+            <summary>
+            APIにリクエストします。
+            </summary>
+            <param name="host">MisskeyインスタンスのURL</param>
+            <param name="endpoint">エンドポイント名</param>
+            <param name="ps">パラメーター</param>
+            <returns>レスポンス</returns>
+        </member>
+        <member name="P:Misq.Entities.User.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Misq.Entities.User.Name">
+            <summary>
+            名前
+            </summary>
+        </member>
+        <member name="P:Misq.Entities.User.Username">
+            <summary>
+            ユーザー名
+            </summary>
+        </member>
+        <member name="M:Misq.Entities.User.#ctor(System.Object)">
+            <summary>
+            データソースを与えてユーザーを初期化します。
+            </summary>
+            <param name="source">データソース</param>
+        </member>
+        <member name="P:Misq.Me.Token">
+            <summary>
+            アクセストークン
+            </summary>
+        </member>
+        <member name="P:Misq.Me.UserToken">
+            <summary>
+            ユーザートークン
+            </summary>
+        </member>
+        <member name="P:Misq.Me.Host">
+            <summary>
+            インスタンスURL
+            </summary>
+        </member>
+        <member name="M:Misq.Me.Request(System.String)">
+            <summary>
+            このユーザーからAPIにリクエストします。
+            </summary>
+            <param name="endpoint">エンドポイント名</param>
+            <returns>レスポンス</returns>
+        </member>
+        <member name="M:Misq.Me.Request(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            このユーザーからAPIにリクエストします。
+            </summary>
+            <param name="endpoint">エンドポイント名</param>
+            <param name="ps">パラメーター</param>
+            <returns>レスポンス</returns>
+        </member>
+        <member name="M:Misq.Me.RequestWithBinary(System.String,System.Net.Http.MultipartFormDataContent)">
+            <summary>
+            このユーザーからAPIにリクエストします。
+            </summary>
+            <param name="endpoint">エンドポイント名</param>
+            <param name="ps">パラメーター</param>
+            <returns>レスポンス</returns>
+        </member>
+    </members>
+</doc>

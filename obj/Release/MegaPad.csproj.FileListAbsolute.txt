@@ -22,7 +22,6 @@ C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Sy
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\System.ValueTuple.dll
-C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Newtonsoft.Json.pdb
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Newtonsoft.Json.xml
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\System.Reactive.xml
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\System.Reactive.Core.xml
@@ -41,3 +40,6 @@ C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\obj\Release\Me
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.exe
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.pdb
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.HashTagSelecter.resources
+C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Misq.dll
+C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Misq.pdb
+C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Misq.xml

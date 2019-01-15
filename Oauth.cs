@@ -32,19 +32,51 @@ namespace WindowsFormsApplication1
         public void GenerateButton_Click(object sender, EventArgs e)
         {
             host = InstanceInput.Text;
-            try
+            if (InstanceInput.Text == "misskey.xyz")
             {
-                registeredApp = ApplicaionManager.RegistApp(host, "MegaPad", Scope.Read | Scope.Write | Scope.Follow).Result;
-            }
-           catch (AggregateException) {
-                MessageBox.Show("インスタンスを取得できませんでした。正しいインスタンスの名前か確認してください。",
-                "エラー",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
-            var url = ApplicaionManager.GetOAuthUrl(registeredApp);
+                // 操作するレジストリ・キーの名前
+                string registryKeyName = @"Software\MegaPad\Sub";
+                // 取得処理を行う対象となるレジストリの値の名前
+                string registryValueName = "hostname";
 
-            OAuthlink.Text = url;
+                //キー（HKEY_CURRENT_USER\Software\Sample）を開く
+                using (RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(registryKeyName))
+                {
+                    // レジストリの値を設定
+                    registryKey.SetValue(registryValueName, "misskey.xyz");
+                }
+
+                // 取得処理を行う対象となるレジストリの値の名前
+                registryValueName = "AccessToken";
+
+                //キー（HKEY_CURRENT_USER\Software\Sample）を開く
+                using (RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(registryKeyName))
+                {
+                    // レジストリの値を設定
+                    registryKey.SetValue(registryValueName, "misskey is not need token");
+                }
+
+                main.OAuthMisskeyAsync();
+                Close();
+
+            }
+            else
+            {
+                try
+                {
+                    registeredApp = ApplicaionManager.RegistApp(host, "MegaPad", Scope.Read | Scope.Write | Scope.Follow).Result;
+                }
+                catch (AggregateException)
+                {
+                    MessageBox.Show("インスタンスを取得できませんでした。正しいインスタンスの名前か確認してください。",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+                var url = ApplicaionManager.GetOAuthUrl(registeredApp);
+
+                OAuthlink.Text = url;
+            }
         }
 
         private void OAuthlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

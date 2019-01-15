@@ -8,6 +8,10 @@ using Mastodot.Enums;
 using Mastodot.Utils;
 using Mastodot.Entities;
 using System.Drawing;
+using Misq;
+using Misq.Entities;
+using System.Collections.Generic;
+using Microsoft.Win32;
 
 namespace WindowsFormsApplication1
 {
@@ -19,16 +23,15 @@ namespace WindowsFormsApplication1
         private static string AccessToken;
         public static  string [] TodoList;
         //public static MainWindow main = new MainWindow();
-        
+        private App app = new Misq.App("https://misskey.xyz", "gKC6a0wxLS1YQwiTOxAPr95x1R7qzkHV");
+        private Me user;
+        private int i = 0;
 
         public MainWindow()
         {
             InitializeComponent();
             this.TopMost = true;
-            
-
-
-    }
+        }
 
 
         public void OAuth(string a)
@@ -41,7 +44,14 @@ namespace WindowsFormsApplication1
                 //内容を一行ずつ読み込む
                 AccessToken = (string)regkey.GetValue("AccessToken");
                 host = (string)regkey.GetValue("hostname");
-                Toot(a);
+                if (host == "misskey.xyz")
+                {
+                    OAuthMisskeyAsync();
+                }
+                else
+                {
+                    Toot(a);
+                }
             }
             catch (NullReferenceException)
             {
@@ -58,6 +68,36 @@ namespace WindowsFormsApplication1
             this.TopMost = true;
         }
 
+        public async void OAuthMisskeyAsync() {
+
+
+            if (AccessToken == "misskey is not need token" && i ==0) {
+                user = await app.Authorize();
+                i++;
+            }
+           
+            string TootMessage = Toot_Input.Text;
+
+            if (TootMessage.Length > 500)
+            {
+                MessageBox.Show("文字数超過です。減らしてください。",
+                "エラー",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                return;
+            }
+
+            // Let's post a message to Misskey
+            await user.Request("notes/create", new Dictionary<string, object> {
+                { "text", TootMessage }
+            });
+
+            Toot_Input.Clear();
+        }
+
+
+
+
 
 
         public void Form2_FormClosed(object sender, FormClosedEventArgs e) {
@@ -73,7 +113,7 @@ namespace WindowsFormsApplication1
             var client = new MastodonClient(host, AccessToken);
 
             
-            string TootMessage = Toot_Input.Text+ Environment.NewLine;
+            string TootMessage = Toot_Input.Text;
 
             if (TootMessage.Length > 500) {
                 MessageBox.Show("文字数超過です。減らしてください。",
