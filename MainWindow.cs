@@ -339,5 +339,21 @@ namespace WindowsFormsApplication1
                 Toot_Input.Text = Toot_Input.Text + Environment.NewLine + "#" + tagselector.SelectedTag;
             }
         }
+
+        private void 文字修飾ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InputPlusOption input = new InputPlusOption();
+            this.TopMost = false;
+            input.ShowDialog();
+            this.TopMost = true;
+            if (input.SelectedPlus == null)
+            {
+                Toot_Input.Text = Toot_Input.Text;
+            }
+            else
+            {
+                Toot_Input.Text = Toot_Input.Text + input.SelectedPlus;
+            }
+        }
     }
 }

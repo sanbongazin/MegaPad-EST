@@ -43,3 +43,4 @@ C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\obj\Release\Wi
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Misq.dll
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Misq.pdb
 C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\bin\Release\Misq.xml
+C:\Users\Makuwo\source\repos\EST@MegaPad\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.InputPlusOption.resources

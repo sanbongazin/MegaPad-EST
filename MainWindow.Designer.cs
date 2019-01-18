@@ -52,6 +52,7 @@
             this.brewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ハッシュタグオプションToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.文字修飾ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,7 +172,8 @@
             this.ツールTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.フォントサイズの変更ToolStripMenuItem,
             this.カラープロファイルToolStripMenuItem,
-            this.ハッシュタグオプションToolStripMenuItem});
+            this.ハッシュタグオプションToolStripMenuItem,
+            this.文字修飾ToolStripMenuItem});
             this.ツールTToolStripMenuItem.Name = "ツールTToolStripMenuItem";
             this.ツールTToolStripMenuItem.Size = new System.Drawing.Size(109, 29);
             this.ツールTToolStripMenuItem.Text = "ツール（&T）";
@@ -258,6 +260,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(0, 0);
             this.tableLayoutPanel1.TabIndex = 18;
             // 
+            // 文字修飾ToolStripMenuItem
+            // 
+            this.文字修飾ToolStripMenuItem.Name = "文字修飾ToolStripMenuItem";
+            this.文字修飾ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.文字修飾ToolStripMenuItem.Text = "文字修飾";
+            this.文字修飾ToolStripMenuItem.Click += new System.EventHandler(this.文字修飾ToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -306,6 +315,7 @@
         private System.Windows.Forms.ToolStripMenuItem ダークToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem brewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ハッシュタグオプションToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 文字修飾ToolStripMenuItem;
     }
 }
 
